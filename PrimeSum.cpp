@@ -1,33 +1,31 @@
 #include <iostream>
 using namespace std;
 
-int prime, num;
-
 int main()
 {
-    int num, i, upto, sum = 0;
+	int sum = 0;
+	int number;
 
-    // Take input from user
-    cout << "Find sum of prime numbers upto : ";
-    cin >> upto;
+	std::cout << "Enter a Number" << std::endl;
+	cin >> number;
 
-    for (num = 1; num <= upto; ++num) {
-
-        for (i = 2; i <= (num / 2); i++) {
-
-            if (num % i == 0) {
-                i = num;
-                break;
-            }
-        }
-
-        // If the number is prime then add it.
-        if (i != num) {
-            sum += num;
-        }
-    }
-
-    cout << endl << "Sum of all prime numbers upto " << upto << " : " << sum ;
-
-    return 0;
+	for (int num = 1; num <= number; num++)
+	{
+		int count = 0;
+		for (int i = 2; i <= num / 2; i++)
+		{    
+			if (num % i == 0)
+			{
+				 
+				count++;
+				break;
+			}  
+		} 
+		if (count == 0 && num != 1)
+		{
+			      
+			sum = sum + num;
+		}  
+	}  
+	std::cout << "Sum of prime numbers upto the given numbers are " << sum;  
 }
